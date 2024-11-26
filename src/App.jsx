@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import './index.css';
 import { Layout, Typography, Card, Row, Col } from "antd";
 import 'antd/dist/reset.css';
 import backgroundImage from "./assets/backgroundImage.jpg";
-import {DotChartOutlined  } from "@ant-design/icons";
-import { CloudOutlined }from "@ant-design/icons";
-import { DashboardOutlined }from "@ant-design/icons";
-import {BarChartOutlined }from "@ant-design/icons";
+import { DotChartOutlined } from "@ant-design/icons";
+import { CloudOutlined } from "@ant-design/icons";
+import { DashboardOutlined } from "@ant-design/icons";
+import { BarChartOutlined } from "@ant-design/icons";
+
 const { Title } = Typography;
 const { Content } = Layout;
 
@@ -43,7 +45,14 @@ function App() {
         backgroundPosition: "center",
       }}
     >
-      <Content style={{ width: "100%", height: "10px", display: "flex", justifyContent: "center" }}>
+      <Content
+        style={{
+          width: "100%",
+          height: "10px",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         {loading ? (
           <Title level={3}>Loading Weather...</Title>
         ) : error ? (
@@ -65,44 +74,102 @@ function App() {
               textAlign: "center",
             }}
           >
-            <Title level={2} style={{ marginBottom: "10px", fontSize: "28px", color: "#1890ff" }}>
+            <Title
+              level={2}
+              style={{
+                marginBottom: "10px",
+                fontSize: "28px",
+                color: "#1890ff",
+              }}
+            >
               {weatherData.name}, {weatherData.sys.country}
             </Title>
-            <Row gutter={[80, 16]} style={{ marginBottom: "10px" }}>
+            <Row
+              gutter={[80, 16]}
+              style={{
+                marginBottom: "10px",
+              }}
+            >
               <Col span={24}>
-                <div style={{ fontSize: "30px", marginBottom: "15px", fontWeight: "bold" }}>Temperature:</div>
-                <div style={{ fontSize: "40px", color: "#1890ff", fontWeight: "bold" }}>
+                <div
+                  style={{
+                    fontSize: "30px",
+                    marginBottom: "15px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Temperature:
+                </div>
+                <div
+                  style={{
+                    fontSize: "40px",
+                    color: "#1890ff",
+                    fontWeight: "bold",
+                  }}
+                >
                   {weatherData.main.temp}°C
                 </div>
               </Col>
 
               <Col span={12}>
-                <div style={{ fontSize: "25px", marginBottom: "10px", fontWeight: "bold" }}>  Weather:    <CloudOutlined  style={{color:"#ffff", fontSize: "22px" }}/></div>
+                <div
+                  style={{
+                    fontSize: "25px",
+                    marginBottom: "10px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Weather: <CloudOutlined style={{ color: "#ffff", fontSize: "22px" }} />
+                </div>
                 <div style={{ fontSize: "30px", color: "#CAF0F8" }}>
                   {weatherData.weather[0].description}
                 </div>
               </Col>
               <Col span={12}>
-                <div style={{ fontSize: "25px", marginBottom: "10px", fontWeight: "bold" }}>  Wind Speed:     <DashboardOutlined  style={{color:"#ffff", fontSize: "22px" }}/></div>
+                <div
+                  style={{
+                    fontSize: "25px",
+                    marginBottom: "10px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Wind Speed: <DashboardOutlined style={{ color: "#ffff", fontSize: "22px" }} />
+                </div>
                 <div style={{ fontSize: "30px", color: "#CAF0F8" }}>
                   {weatherData.wind.speed} m/s
                 </div>
               </Col>
 
               <Col span={12}>
-                <div style={{ fontSize: "25px", marginBottom: "10px", fontWeight: "bold" }}>  Humidity:      <DotChartOutlined  style={{color:"#ffff", fontSize: "22px" }} /></div>
+                <div
+                  style={{
+                    fontSize: "25px",
+                    marginBottom: "10px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Humidity: <DotChartOutlined style={{ color: "#ffff", fontSize: "22px" }} />
+                </div>
                 <div style={{ fontSize: "30px", color: "#CAF0F8" }}>
                   {weatherData.main.humidity}%
                 </div>
               </Col>
               <Col span={12}>
-                <div style={{ fontSize: "25px", marginBottom: "10px", fontWeight: "bold" }}> Pressure:        <BarChartOutlined  style={{color:"#ffff", fontSize: "22px" }}  /></div>
+                <div
+                  style={{
+                    fontSize: "25px",
+                    marginBottom: "10px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Pressure: <BarChartOutlined style={{ color: "#ffff", fontSize: "22px" }} />
+                </div>
                 <div style={{ fontSize: "30px", color: "#CAF0F8" }}>
                   {weatherData.main.pressure} hPa
                 </div>
               </Col>
             </Row>
-          </Card>   
+          </Card>
         ) : (
           <Title level={3}>No weather data available</Title>
         )}
@@ -112,3 +179,4 @@ function App() {
 }
 
 export default App;
+

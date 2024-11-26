@@ -1,68 +1,154 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Default styles for large screens */
+.card-container {
+  height: auto;
+  width: 85vh;
+  padding: 20px;
+  margin-top: 180px;
+  margin-right: 50px;
+  border-radius: 10px;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1.1);
+  text-align: center;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.title {
+  margin-bottom: 10px;
+  font-size: 28px;
+  color: #1890ff;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.weather-row {
+  margin-bottom: 10px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.card-content {
+  font-size: 30px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+/* Media Queries for smaller screens */
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* For tablets and smaller desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .card-container {
+    width: 90%;
+    padding: 15px;
+    margin-top: 50px;
   }
-  a:hover {
-    color: #747bff;
+
+  .title {
+    font-size: 24px;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .card-content {
+    font-size: 24px;
+  }
+
+  .weather-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .card-container {
+    width: 95%;
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .card-content {
+    font-size: 20px;
+  }
+
+  .weather-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* For extra small phone screens (max-width: 414px, iPhone XR and similar) */
+@media (max-width: 414px) {
+  /* Make the card container fill the screen width and reduce padding */
+  .card-container {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+  }
+
+  .title {
+    font-size: 18px; /* Decrease title font size */
+  }
+
+  .card-content {
+    font-size: 18px; /* Decrease content font size */
+  }
+
+  .weather-row {
+    flex-direction: column; /* Stack the weather information */
+    align-items: center;
+  }
+
+  /* Reduce the icon size */
+  .anticon {
+    font-size: 18px !important;
+  }
+
+  /* Adjust card shadow for better mobile fit */
+  .card-container {
+    box-shadow: none; /* Remove heavy shadows on mobile for better performance */
+  }
+
+  /* Improve readability by reducing margins and padding */
+  .card-content {
+    margin-bottom: 12px;
+  }
+
+  .weather-row > .ant-col {
+    margin-bottom: 10px; /* Add space between weather items */
+  }
+
+  /* Reduce the margin and padding of the entire card */
+  .card-container {
+    padding: 10px;
+  }
+}
+
+/* For very small phones (max-width: 375px) */
+@media (max-width: 375px) {
+  .card-container {
+    width: 100%;
+    padding: 6px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .card-content {
+    font-size: 16px;
+  }
+
+  .weather-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Make icons smaller for very small screens */
+  .anticon {
+    font-size: 16px !important;
+  }
+
+  .card-container {
+    box-shadow: none;
+    padding: 8px;
   }
 }
