@@ -28,9 +28,9 @@
   font-weight: bold;
 }
 
-/* Media Queries for smaller screens */
 
-/* For tablets and smaller desktops (max-width: 1024px) */
+
+/*  (max-width: 1024px) */
 @media (max-width: 1024px) {
   .card-container {
     width: 90%;
@@ -75,9 +75,9 @@
   }
 }
 
-/* For extra small phone screens (max-width: 414px, iPhone XR and similar) */
+
 @media (max-width: 414px) {
-  /* Make the card container fill the screen width and reduce padding */
+ 
   .card-container {
     width: 100%;
     padding: 8px;
@@ -85,44 +85,43 @@
   }
 
   .title {
-    font-size: 18px; /* Decrease title font size */
+    font-size: 18px;
   }
 
   .card-content {
-    font-size: 18px; /* Decrease content font size */
+    font-size: 18px; 
   }
 
   .weather-row {
-    flex-direction: column; /* Stack the weather information */
+    flex-direction: column; 
     align-items: center;
   }
 
-  /* Reduce the icon size */
+  
   .anticon {
     font-size: 18px !important;
   }
 
-  /* Adjust card shadow for better mobile fit */
+  
   .card-container {
-    box-shadow: none; /* Remove heavy shadows on mobile for better performance */
+    box-shadow: none; 
   }
 
-  /* Improve readability by reducing margins and padding */
+ 
   .card-content {
     margin-bottom: 12px;
   }
 
   .weather-row > .ant-col {
-    margin-bottom: 10px; /* Add space between weather items */
+    margin-bottom: 10px; 
   }
 
-  /* Reduce the margin and padding of the entire card */
+  
   .card-container {
     padding: 10px;
   }
 }
 
-/* For very small phones (max-width: 375px) */
 @media (max-width: 375px) {
   .card-container {
     width: 100%;
@@ -142,7 +141,7 @@
     align-items: center;
   }
 
-  /* Make icons smaller for very small screens */
+ 
   .anticon {
     font-size: 16px !important;
   }
